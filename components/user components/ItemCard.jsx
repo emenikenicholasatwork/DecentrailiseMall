@@ -19,7 +19,7 @@ const ItemCard = () => {
             <div key={product.id} className=' h-[350px] w-[250px] d-flex flex-col rounded-md bg-white justify-content-center cursor-pointer p-2 item' >
                 <Image
                 className='w-[300px] h-[200px]'
-                src={product.image1} 
+                src={product.image} 
                 alt="Item Image"
                 height={200} 
                 width={200}/>
@@ -27,13 +27,10 @@ const ItemCard = () => {
                 <div className='' >
                   <p className='m-0 text-sm line-clamp-2 text-black'>{product.description}</p>
                   <div className=''>
-                    <p className='m-0 font-bold text-green-500 text-xl'>{new Intl.NumberFormat('en-US',{
-                        style: 'currency',
-                        currency: 'USD'
-                    }).format(product.price)}</p>
+                    <p className='m-0 font-bold text-green-500 text-xl'>{product.price+' Eth'}</p>
                   </div>       
                 </div>
-                <button className='bg-[#FB923C] hover:bg-[#c56e28] text-white h-16 cursor-pointer rounded-md font-bold'>ADD TO CART</button>
+                <button className='bg-[#FB923C] hover:bg-[#c56e28] text-white h-16 cursor-pointer rounded-md font-bold'>BUY / PAY</button>
             </div>
           </Link>
         ))

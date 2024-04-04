@@ -41,7 +41,7 @@ const page = () => {
                         <th>Id</th>
                         <th>Preview</th>
                         <th>Product name</th>
-                        <th>Amount Available</th>
+                        <th>Product description</th>
                         <th>Price</th>
                     </tr>
                 </thead>
@@ -50,13 +50,10 @@ const page = () => {
                       productList.map(product=>(
                       <tr key={product.id}>
                           <td>{product.id}</td>
-                          <td><Image src={product.image1} width={20} height={20} className='shadow-md w-14 rounded-circle h-14'/></td>
+                          <td><Image src={product.image} width={20} height={20} className='shadow-md w-14 rounded-circle h-14'/></td>
                           <td>{product.name}</td>
-                          <td>{product.available}</td>
-                          <td>{new Intl.NumberFormat('en-US',{
-                        style: 'currency',
-                        currency: 'USD'
-                    }).format(product.price)}</td>
+                          <td>{product.description}</td>
+                          <td>{product.price+' ETH'}</td>
                           <td className='justify-center ms-2 d-flex'>
                               <i className='bi bi-pencil-square bg-blue-500 font-bold text-lg rounded-lg text-white p-3 cursor-pointer'><span className='ms-2'>Edit</span></i>
                           </td>
