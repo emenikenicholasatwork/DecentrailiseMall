@@ -3,9 +3,13 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import axios from 'axios'
+import NewProduct from '@/components/admin dashboard/NewProduct'
+import { useGlobal } from '@/app/globalContext'
 
 const page = () => {
   const [productList, setProductList] = useState([])
+  const {new_product_form} = useGlobal()
+  const {change_new_product_form_state} = useGlobal()
 
   useEffect(()=>{
     fetchProducts();
@@ -17,12 +21,10 @@ const page = () => {
   }
   return (
     <div className='h-full w-full pt-5'>
-
+      {new_product_form && <NewProduct/> }
       <div className='flex justify-content-between fixed z-50 bg-[#f6f9FF] h-14 w-[80%] top-[80px]'>
         <h3 className=''>189 Products</h3>
-        <Link href={'/admin/product/add'}>
-          <button className='bg-primary hidden xl:block text-white font-bold p-2 rounded-md'>Add Product</button>
-        </Link>
+          <button  className='bg-primary hidden lg:block text-white font-bold p-2 rounded-md' onClick={change_new_product_form_state}>Add Product</button>
         <input placeholder='Search' className=' p-2 text-center bg-white text-black font-bold border-1 rounded-md shadow-md' type='text'/>
       </div>
       <div className=' '>

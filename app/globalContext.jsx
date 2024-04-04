@@ -10,6 +10,7 @@ export function GlobalProvider({ children}) {
     const [cartProductCount, setCartProductCount] = useState([])
     const [userName, setUserName] = useState()
     const [refresh, setRefresh] = useState(false)
+    const [new_product_form, set_new_product_form] = useState(false)
 
     const openOrCloseCart = () =>{
         openCart ? setOpenCart(false) : setOpenCart(true)
@@ -17,6 +18,10 @@ export function GlobalProvider({ children}) {
 
     const changeCartProductCount = items =>{
         setCartProductCount(items)
+    }
+
+    const change_new_product_form_state=()=>{
+        new_product_form ? set_new_product_form(false) : set_new_product_form(true)
     }
 
     const changeUserNameState = details =>{
@@ -38,6 +43,8 @@ export function GlobalProvider({ children}) {
     return(
         <GlobalContext.Provider value={{
             openOrCloseCart,
+            new_product_form,
+            change_new_product_form_state,
             openCart,
             changeCartProduct,
             cartProduct,

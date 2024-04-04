@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "client": "next dev",
-    "server": "nodemon server/server.js",
+    "server": "mvn -f server/pom.xml spring-boot:run",
     "dev": "concurrently \"npm run client\" \"npm run server\"",
     "build": "next build",
     "start": "next start",
@@ -23,7 +23,6 @@
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.1",
-    "mysql": "^2.18.1",
     "next": "^14.0.4",
     "nodemailer": "^6.9.8",
     "nodemon": "^3.1.0",
