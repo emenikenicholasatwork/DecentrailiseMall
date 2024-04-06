@@ -2,13 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import axios from 'axios'
-import NewProduct from '@/components/admin dashboard/NewProduct'
 import { useGlobal } from '@/app/globalContext'
 
 const ProductListCard = () => {
   const [productList, setProductList] = useState([]);
-  const { new_product_form } = useGlobal();
-  const { change_new_product_form_state } = useGlobal();
+  const { open_or_close_form } = useGlobal();
   
   useEffect(() => {
     fetchProducts();
@@ -20,15 +18,14 @@ const ProductListCard = () => {
   };
   
   return (
-    <div className='h-full w-full pt-5'>
-      {new_product_form && <NewProduct />}
-      <div className=''>
-        <div className='card p-3'>
-          <div className=''>
+        <div className='bg-white h-[500px] p-3 mt-5'>
+          <div className='flex flex-row items-center justify-between'>
             <h5 className='m-0 font-bold'>Available Products</h5>
+            <button className='p-2 bg-blue-400 text-white shadow-sm rounded-md' onClick={open_or_close_form}>new product</button>
+            <h2>{productList.length}</h2>
           </div>
           <hr className='mt-1 mb-3' />
-          <div className='mb-52 overflow-auto'>
+          <div className=' overflow-auto h-[400px] pb-52'>
             <table className='w-full pb-52'>
               <thead>
                 <tr>
@@ -66,8 +63,6 @@ const ProductListCard = () => {
             </table>
           </div>
         </div>
-      </div>
-    </div>
   );
 }  
 

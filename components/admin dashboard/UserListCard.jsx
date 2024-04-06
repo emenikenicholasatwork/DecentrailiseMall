@@ -17,15 +17,13 @@ const UserListCard = () => {
         console.log(response)
     }
   return (
-    <div className='h-full w-full pt-5'>
-      <div className=' '>
-      <div className='card p-3'>
-        <div className=''>
+    <div className='bg-white p-3  h-[500px] w-full mt-5'>
+        <div className='flex flex-row justify-between items-center'>
             <h5 className=' m-0 font-bold'>Registered Users</h5>
+            <h2>{userList.length}</h2>
         </div>
         <hr className='mt-1 mb-3' />
-        <div className='mb-52 overflow-auto'>
-
+        <div className='pb-52 h-[400px] overflow-auto'>
             <table className='w-full pb-52'>
                 <thead>
                     <tr>
@@ -34,7 +32,6 @@ const UserListCard = () => {
                         <th>Full name</th>
                         <th>Email</th>
                         <th>Date of account</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,13 +43,6 @@ const UserListCard = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>{user.created}</td>
-                                <td className=''>
-                                    <p className='bg-success text-white text-center font-bold p-3 rounded-md'>Verified</p>    
-                                </td>
-                                <td className=' h-14 xl:flex gap-2 hidden'>
-                                        <i className='bi bi-pencil-square d-flex justify-content-center align-items-center w-full h-[52px] bg-blue-500 font-bold text-lg rounded-lg text-white p-1 cursor-pointer'><span className='ms-2'>Edit</span></i>
-                                        <i onClick={()=>{setConfirmDelete(true)}} className='bi bi-trash h-[52px] d-flex justify-content-center align-items-center  bg-danger font-bold text-lg rounded-lg text-white p-1 w-full cursor-pointer'><span className='ms-2'>Delete</span></i>
-                                </td>
                             </tr>
                         ))
                     }
@@ -72,8 +62,6 @@ const UserListCard = () => {
         </div>
         }
         </div>
-      </div>
-    </div>
   )
 }
 

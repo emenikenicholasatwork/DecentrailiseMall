@@ -4,7 +4,7 @@ import axios from 'axios'
 import React, { useRef, useState } from 'react'
 
 const NewProduct = () => {
-    const {change_new_product_form_state} = useGlobal()
+    const {open_or_close_form} = useGlobal()
     const [image, setImage] = useState(null)
     const image_ref = useRef(null)
     const [productDetails, setProductDetails] = useState({
@@ -46,7 +46,7 @@ const NewProduct = () => {
         <div class="bg-gray-400 h-[600px] w-[400px] p-6 rounded-lg">
             <div className='flex flex-row justify-between'>
                 <p className='font-bold text-2xl'>New Product</p>
-                <i className='font-bold text-red-500 text-2xl cursor-pointer' onClick={change_new_product_form_state}>X</i>
+                <i className='font-bold text-red-500 text-2xl cursor-pointer' onClick={open_or_close_form}>X</i>
             </div>
             <form>
                 <div className='w-[200px] h-[200px] newProductImage cursor-pointer'>

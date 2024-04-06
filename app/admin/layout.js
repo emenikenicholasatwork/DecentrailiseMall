@@ -18,9 +18,7 @@ const layout = ({children}) => {
             </div>
         </header>
         <div className='h-[80px] w-full '></div>
-        <div className='w-full h-full fixed d-flex flex-row'>
-            <main className='p-3 bg-[#f6f9FF] w-full overflow-auto'>{children}</main>
-        </div>
+        <main className='pb-52 p-3 bg-[#f6f9FF] fixed h-full w-full overflow-auto'>{children}</main>
     </div>
   )
 }

@@ -8,7 +8,7 @@ export function GlobalProvider({ children}) {
     const [refresh, setRefresh] = useState(false)
     const [new_product_form, set_new_product_form] = useState(false)
 
-    const change_new_product_form_state=()=>{
+    const open_or_close_form=()=>{
         new_product_form ? set_new_product_form(false) : set_new_product_form(true)
     }
 
@@ -24,7 +24,7 @@ export function GlobalProvider({ children}) {
     return(
         <GlobalContext.Provider value={{
             new_product_form,
-            change_new_product_form_state,
+            open_or_close_form,
             refresh,
             changeRefreshState,
             userName,
