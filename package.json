@@ -5,7 +5,7 @@
   "scripts": {
     "client": "next dev",
     "server": "mvn -f server/pom.xml spring-boot:run",
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "dev": "concurrently \"npm run client\" \"npm run serve\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

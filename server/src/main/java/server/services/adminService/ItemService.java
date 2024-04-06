@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import server.admin.Item.Item;
-import server.components.componentsServices.ImageService;
+import server.components.ImageService;
 import server.model.Product;
 import server.model.User;
 import server.repository.ProductRepository;
@@ -36,8 +36,7 @@ public class ItemService implements AdminServiceInterface {
 
         @Override
         public List<User> getAllUsers() {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'getAllUsers'");
+                return null;
         }
 
         @Override
@@ -47,18 +46,13 @@ public class ItemService implements AdminServiceInterface {
 
         @Override
         public ResponseEntity<?> saveItem(Product product) throws Exception {
-                Product newProduct = Product.builder()
-                                .name(product.getName())
-                                .price(product.getPrice())
-                                .description(product.getDescription())
-                                .image(ImageService
-                                                .saveImageBytes(
-                                                                ImageService.encryptImage(
-                                                                                product.getImage().getBytes(),
-                                                                                ImageService.getKey(key))))
-                                .build();
-
-                return new ResponseEntity<>(productRepository.save(newProduct), HttpStatus.OK);
+                return new ResponseEntity<>(productRepository.save(Product
+                .builder()
+                .name(product.getName())
+                .description(product.getDescription())
+                .price(product.getPrice())
+                .image(ImageService.saveImageBytes(ImageService.encryptImage(product.getImage().getBytes(), ImageService.getKey(key))))
+                .build()), HttpStatus.OK);
         }
 
         public List<Product> getAllProducts() throws Exception {

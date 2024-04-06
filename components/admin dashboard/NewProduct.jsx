@@ -40,7 +40,6 @@ const NewProduct = () => {
         const response = await axios.post('http://localhost:8080/api/v1/admin/item/add', formData, {
             headers: {Accept: "application/json"}
         })
-        console.log(response)
       }
   return (
     <div class="fixed top-0 left-0 w-full h-full flex justify-center items-center z-50">

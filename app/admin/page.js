@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
 import StatisticsCard from '@/components/admin dashboard/StatisticsCard'
-import RecentActivitiesCard from '@/components/admin dashboard/RecentActivitiesCard'
 import RecentSales from '@/components/admin dashboard/RecentSales'
-import Topselling from '@/components/admin dashboard/Topselling'
+import UserListCard from '@/components/admin dashboard/UserListCard'
+import ProductListCard from '@/components/admin dashboard/ProductListCard'
 
 const page = () => {
   return (
@@ -16,12 +16,11 @@ const page = () => {
           <div className='d-flex h-full flex-col w-full gap-5'>
             <StatisticsCard/>
             <RecentSales/>
-            <Topselling/>
+            <UserListCard/>
+            <ProductListCard/>
           </div>
           <div className='d-flex flex-auto h-full'>
-            <RecentActivitiesCard/>
           </div>
-
         </div>
     </div>
   )

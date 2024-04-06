@@ -10,7 +10,7 @@ import Cookies from 'js-cookie'
 import { redirect } from 'next/navigation'
 
 const layout = ({children}) => {
-    const {openOrCloseCart, cartProduct, cartTotal, changeUserNameState, userName} = useGlobal();
+    const { changeUserNameState, userName} = useGlobal();
     const [logout, setLogout] = useState(false)
     const [isPopupOpen, setIsPopupOpen] = useState(false)
     const popupRef = useRef(null);
@@ -92,22 +92,6 @@ const layout = ({children}) => {
         </header>
         <div className='h-[80px] w-full '></div>
         <main className='w-full bg-[#f6f9FF] h-full fixed p-2 flex-wrap d-flex'>{children}</main>
-        <footer className='flex justify-content-between align-items-center bg-white p-2 h-[75px] bottom-0 min-w-full fixed z-20'>
-                <div className='d-flex flex-row gap-2 justify-content-center align-items-center'>
-                    <p className='bg-green-900 text-white font-bold text-2xl d-flex justify-content-center align-items-center rounded-circle h-10 w-10'>{cartProduct.length}</p>
-                    <p className='font-bold text-xl'>Items</p>
-                </div>
-                <div className='cursor-pointer' onClick={(()=>{openOrCloseCart()})}>
-                    <i className='bi bi-cart text-5xl rounded-md h-16 w-16 bg-green-900  d-flex justify-content-center align-items-center text-white'></i>
-                </div>
-                <div className='d-flex font-bold text-xl'>
-                    <p>Price :</p>
-                    <p className='text-green-500'>&nbsp; {new Intl.NumberFormat('en-US',{
-                        style: 'currency',
-                        currency: 'USD'
-                    }).format(cartTotal)}</p>
-                </div>
-        </footer>
     </div>
   )
 }

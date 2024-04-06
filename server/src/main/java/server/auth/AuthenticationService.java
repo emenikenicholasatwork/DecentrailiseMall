@@ -9,8 +9,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
-import server.components.RecentActivities;
-import server.components.componentsRepository.RecentActivitiesRepository;
 import server.config.JwtService;
 import server.model.Role;
 import server.model.User;
@@ -23,7 +21,6 @@ public class AuthenticationService {
         private final UserRepository userRepository;
         private final PasswordEncoder passwordEncoder;
         private final JwtService jwtService;
-        private final RecentActivitiesRepository recentActivitiesRepository;
 
         public ResponseEntity<?> register(RegisterRequest request) {
                 var checkedUser = userRepository.findByEmail(request.getEmail());
@@ -39,11 +36,6 @@ public class AuthenticationService {
                                 .build();
                 var jwtToken = jwtService.generateToken(user);
                 userRepository.save(user);
-                var recentActivity = RecentActivities.builder()
-                                .time(LocalDate.now())
-                                .activity(user.getName() + " Just created an account...")
-                                .build();
-                recentActivitiesRepository.save(recentActivity);
 
                 var token = AuthenticationResponse.builder()
                                 .token(jwtToken)

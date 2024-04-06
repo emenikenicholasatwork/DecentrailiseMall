@@ -1,6 +1,5 @@
 package server.controllers.adminController;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
@@ -14,9 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
-import server.components.RecentActivities;
-import server.components.componentsRepository.RecentActivitiesRepository;
-import server.components.componentsServices.RecentActivitiesService;
 import server.model.Product;
 import server.model.User;
 import server.services.adminService.AdminUserService;
@@ -29,8 +25,6 @@ public class AdminController {
 
     private final ItemService itemService;
     private final AdminUserService adminUserService;
-    private final RecentActivitiesService recentActivitiesService;
-    private final RecentActivitiesRepository recentActivitiesRepository;
 
     @Value("${encryption.images}")
     private String path;
@@ -41,12 +35,6 @@ public class AdminController {
         String price = requestParaMap.get("price");
         String description = requestParaMap.get("description");
         String image = requestParaMap.get("image");
-
-        recentActivitiesRepository.save(RecentActivities
-        .builder()
-        .activity("New Product {"+name+"} just add for sales")
-        .time(LocalDate.now())
-        .build());
         return itemService.saveItem(Product
         .builder()
         .name(name)
@@ -59,11 +47,6 @@ public class AdminController {
     @GetMapping("/users/all")
     public List<User> getAllUsers() {
         return adminUserService.getAllUsers();
-    }
-
-    @GetMapping("/recentActivites")
-    public List<RecentActivities> getAllRecentActivities() {
-        return recentActivitiesService.getRecentActivites();
     }
 
     @GetMapping("/item/all")
