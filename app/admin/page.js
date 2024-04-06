@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import StatisticsCard from '@/components/admin dashboard/StatisticsCard'
 import UserListCard from '@/components/admin dashboard/UserListCard'
 import ProductListCard from '@/components/admin dashboard/ProductListCard'
 import { useGlobal } from '../globalContext'
@@ -12,7 +11,6 @@ const page = () => {
   return (
     <div className=' flex-col w-full mb-52 d-flex'>
           {new_product_form && <NewProduct />}
-            <StatisticsCard/>
             <UserListCard/>
             <ProductListCard/>
           </div>

@@ -46,8 +46,10 @@ const layout = ({children}) => {
                     <p className='md:block hidden font-bold text-3xl m-0'>E-Shop</p>
                 </div>
                 <div className='d-flex justify-content-center align-items-center w-[50%]'>
-                    <input type="text" placeholder='Search' className='h-10 p-4 text-lg bg-[#f6f9ff] w-2/4 border-2 hidden md:block '/>
-                </div>
+                    <Link href={'/admin'}>
+                        <button className='p-3 bg-blue-500 text-white rounded-md font-bold'>go to admin</button>               
+                    </Link>
+                     </div>
                     <i className='bi bi-search md:hidden text-2xl me-5'></i>
             </div>
 
