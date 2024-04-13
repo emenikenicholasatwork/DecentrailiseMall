@@ -1,9 +1,9 @@
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/model/Role.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/auth/AuthenticationService.java
+/home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/components/ImageService.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/auth/RegisterRequest.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/admin/Item/Item.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/ServerApplication.java
-/home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/components/componentsRepository/RecentActivitiesRepository.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/model/User.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/model/UserDetails.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/config/ApplicationConfig.java
@@ -13,7 +13,6 @@
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/controllers/adminController/AdminController.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/services/userService/UserService.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/services/adminService/ItemService.java
-/home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/components/componentsServices/ImageService.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/config/JwtService.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/auth/AuthenticationController.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/controllers/homeController/HomeController.java
@@ -24,8 +23,6 @@
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/services/adminService/AdminServiceInterface.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/config/SecurityConfig.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/controllers/userContoller/UserController.java
-/home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/components/RecentActivities.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/auth/AuthenticationResponse.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/model/Product.java
 /home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/services/ServiceInterface.java
-/home/emenike/projects/upcoming projects/e-commerce/server/src/main/java/server/components/componentsServices/RecentActivitiesService.java
