@@ -50,7 +50,7 @@ const Page = () => {
   }
   
   return (
-    <div className='w-full h-full justify-content-center align-items-center d-flex'>
+    <div className='w-full h-full justify-content-center align-items-center d-flex text-black'>
         <div className='h-[500px] bg-white w-[500px] p-3 shadow-md rounded-lg border-1 '>
             <h3 className='card-header font-bold text-primary'>Login</h3>
             <h5  className='text-[18px]'>Enter credentials to login</h5>
